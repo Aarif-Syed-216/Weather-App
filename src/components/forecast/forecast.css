@@ -1,66 +1,86 @@
 .title {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .daily-item {
-  background-color: #f5f5f5;
-  border-radius: 15px;
-  height: 40px;
-  margin: 5px;
-  align-items: center;
-  cursor: pointer;
+  background: #d3d3d3; /* light grey */
+  color: #333; /* dark text for readability */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  height: 50px;
+  margin: 8px 0;
   display: flex;
+  align-items: center;
   font-size: 14px;
-  padding: 5px 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.daily-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .icon-small {
   width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8); /* white semi-transparent circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 }
 
-.daily-item .day {
-  cursor: inherit;
-  color: #212121;
-  flex: 1 1;
+.day,
+.description,
+.min-max {
+  color: #333; /* dark text */
+}
+
+.day {
+  flex: 1;
   font-weight: 600;
-  margin-left: 15px;
 }
 
 .description {
-  cursor: inherit;
-  flex: 1 1;
+  flex: 1;
   margin-right: 15px;
   text-align: right;
+  font-size: 13px;
 }
 
 .min-max {
-  color: #757575;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .daily-details-grid {
-  grid-row-gap: 0;
-  grid-column-gap: 15px;
-  -webkit-column-gap: 15px;
-  column-gap: 15px;
   display: grid;
-  flex: 1 1;
   grid-template-columns: auto auto;
-  padding: 5px 15px;
-  row-gap: 0;
+  gap: 8px 20px;
+  background: #e8e8e8; /* slightly darker grey for details panel */
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 12px 16px;
+  color: #333;
 }
 
 .daily-details-grid-item {
-  align-items: center;
   display: flex;
-  height: 30px;
   justify-content: space-between;
+  font-size: 13px;
 }
 
 .daily-details-grid-item label:first-child {
-  color: #757575;
+  color: #555;
 }
 
 .daily-details-grid-item label:last-child {
-  color: #212121;
+  color: #222;
 }

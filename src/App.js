@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "./api.js";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
 
 function App() {
@@ -20,14 +20,14 @@ function App() {
     );
 
     Promise.all([currentWeatherFetch, forecastFetch])
-      .then(async (response) => {
-        const weatherResponse = await response[0].json();
-        const forcastResponse = await response[1].json();
+      .then(async (responses) => {
+        const weatherResponse = await responses[0].json();
+        const forecastResponse = await responses[1].json();
 
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forcastResponse });
+        setForecast({ city: searchData.label, ...forecastResponse });
       })
-      .catch(console.log);
+      .catch(console.error);
   };
 
   return (

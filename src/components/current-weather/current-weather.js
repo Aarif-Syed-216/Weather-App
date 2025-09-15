@@ -7,18 +7,22 @@ const CurrentWeather = ({ data }) => {
       <div className="top">
         <div>
           <p className="city">{data.city}</p>
-          <p className="weather-description">{data.weather[0].description}</p>
+          <p className="weather-description">
+            {data.weather[0].description.charAt(0).toUpperCase() +
+              data.weather[0].description.slice(1)}
+          </p>
         </div>
         <img
           alt="weather"
           className="weather-icon"
-          src={`icons/${data.weather[0].icon}.png`}
+          src={process.env.PUBLIC_URL + `/icons/${data.weather[0].icon}.png`}
+          onError={(e) => (e.currentTarget.src = process.env.PUBLIC_URL + "/icons/01d.png")}
         />
       </div>
       <div className="bottom">
         <p className="temperature">{Math.round(data.main.temp)}°C</p>
         <div className="details">
-          <div className="parameter-row">
+          <div className="parameter-row header">
             <span className="parameter-label">Details</span>
           </div>
           <div className="parameter-row">
@@ -29,7 +33,9 @@ const CurrentWeather = ({ data }) => {
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
-            <span className="parameter-value">{data.wind.speed} m/s</span>
+            <span className="parameter-value">
+              {(data.wind.speed * 3.6).toFixed(1)} km/h
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>
