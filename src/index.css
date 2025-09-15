@@ -2,12 +2,11 @@ body {
   margin: 0;
   font-family: sans-serif;
 
-  /* Full-page gradient */
   background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  min-height: 100vh; /* ensures gradient fills the viewport */
+  min-height: 100vh;
 }
 
 code {

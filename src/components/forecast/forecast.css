@@ -6,8 +6,8 @@
 }
 
 .daily-item {
-  background: #d3d3d3; /* light grey */
-  color: #333; /* dark text for readability */
+  background: #d3d3d3; 
+  color: #333;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   height: 50px;
@@ -30,7 +30,7 @@
   height: 40px;
   margin-right: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8); /* white semi-transparent circle */
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,7 @@
 .day,
 .description,
 .min-max {
-  color: #333; /* dark text */
+  color: #333;
 }
 
 .day {
@@ -64,7 +64,7 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 8px 20px;
-  background: #e8e8e8; /* slightly darker grey for details panel */
+  background: #e8e8e8;
   border-radius: 12px;
   margin-top: 10px;
   padding: 12px 16px;
